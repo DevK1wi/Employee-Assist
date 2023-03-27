@@ -44,15 +44,25 @@ const calculateButton = document.getElementById("calculate-button");
 
 calculateButton.addEventListener("click", function() {
   // calculate gross pay
-  const grossPay = hourlyRate.value * hoursWorked.value;
+const grossPay = hourlyRate.value * hoursWorked.value;
+
+// update the HTML element with the calculated value
+const grossPayElement = document.getElementById("gross-pay");
+grossPayElement.textContent = `$${grossPay.toFixed(2)}`;
+
 
   // get the currently selected tax rate
   const taxBracketSelect = document.getElementById('tax-bracket');
   const selectedTaxRate = taxBracketSelect.options[taxBracketSelect.selectedIndex].value;
 
   // calculate tax
-  let taxRate = parseFloat(selectedTaxRate);
-  let taxAmount = (grossPay * taxRate) / 100;
+let taxRate = parseFloat(selectedTaxRate);
+let taxAmount = (grossPay * taxRate) / 100;
+
+// update the HTML element with the calculated value
+const taxElement = document.getElementById("tax-amount");
+taxElement.textContent = `$${taxAmount.toFixed(2)}`;
+
 
   // check to see if kiwiSaver option is selected
   if (kiwiSaverCheckbox.checked) {
