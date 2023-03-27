@@ -8,11 +8,11 @@ const studentLoan = document.getElementsByName("studentLoan");
 
 const kiwiSaverCheckbox = document.getElementById('kiwisaver');
 const kiwiSaverOptionsDiv = document.getElementById('kiwisaver-options');
-const kiwiSaverAmount = 0;
+let kiwiSaverAmount = 0;
 
 const studentLoanAmountInput = document.getElementById("student-loan-amount-input");
 const studentLoanField = document.getElementById("studentLoanField");
-const studentLoanAmount = 0;
+let studentLoanAmount = 0;
 
 const studentLoanThreshold = 39000;
 
@@ -71,6 +71,9 @@ taxElement.textContent = `$${taxAmount.toFixed(2)}`;
     let kiwiSaverRate = parseFloat(kiwiSaverSelect.value);
     let kiwiSaverAmount = (grossPay * kiwiSaverRate) / 100;
     taxAmount += kiwiSaverAmount;
+    console.log(kiwiSaverAmount)
+    document.getElementById("kiwiSaver-amount").innerHTML = kiwiSaverAmount;
+
   }
 
   // check to see if student loan option is selected 
@@ -82,19 +85,20 @@ taxElement.textContent = `$${taxAmount.toFixed(2)}`;
     let userStudentLoanAmount = (grossPay * userStudentLoanRate) / 100;
     studentLoanAmount += userStudentLoanAmount;
     taxAmount += studentLoanAmount;
+    document.getElementById("student-loan-amount").innerHTML = studentLoanAmount;
   }
 
    // update results section
-   const grossPaySpan = document.getElementById("gross-pay");
-   const taxAmountSpan = document.getElementById("tax-amount");
-   const kiwiSaverAmountSpan = document.getElementById("kiwisaver-amount");
-   const studentLoanAmountSpan = document.getElementById("student-loan-amount");
-   const netPaySpan = document.getElementById("net-pay");
+  //  const grossPaySpan = document.getElementById("gross-pay");
+  //  const taxAmountSpan = document.getElementById("tax-amount");
+  //  const kiwiSaverAmountSpan = document.getElementById("kiwisaver-amount");
+  //  const studentLoanAmountSpan = document.getElementById("student-loan-amount");
+  //  const netPaySpan = document.getElementById("net-pay");
  
-   grossPaySpan.textContent = grossPay.toFixed(2);
-   taxAmountSpan.textContent = taxAmount.toFixed(2);
-   kiwiSaverAmountSpan.textContent = kiwiSaverAmount.toFixed(2);
-   studentLoanAmountSpan.textContent = studentLoanAmount.toFixed(2);
+  //  grossPaySpan.textContent = grossPay.toFixed(2);
+  //  taxAmountSpan.textContent = taxAmount.toFixed(2);
+  //  kiwiSaverAmountSpan.textContent = kiwiSaverAmount.toFixed(2);
+  //  studentLoanAmountSpan.textContent = studentLoanAmount.toFixed(2);
   
 
   // calculate net pay
