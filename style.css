@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+header {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #666;
+}
+
+select {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  appearance: none;
+  /* remove default arrow */
+  background-image: url('path/to/your/custom/arrow.png');
+  /* add custom arrow */
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 16px 16px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+select option:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.hero {
+  background-image: url('/pexels-pixabay-265087.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* form */
+.calculator {
+  background-color: #f7f7f7;
+  padding: 3rem;
+  text-align: center;
+}
+
+.calculator h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.calculator form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.calculator label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.calculator input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.calculator button[type="button"] {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calculator button[type="button"]:hover {
+  background-color: #666;
+}
+
+#kiwisaver-options label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#kiwisaver-options input[type="number"] {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+}
+
+#kiwisaver-options input[type="number"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.checkbox-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkbox-container input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-container label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.checkbox-container label:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.checkbox-container label:after {
+  content: '';
+  display: none;
+  position: absolute;
+  left: 7px;
+  top: 4px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container input[type="checkbox"]:checked+label:before {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.checkbox-container input[type="checkbox"]:checked+label:after {
+  display: block;
+}
+
+/* percentage symbol css */
+#kiwisaver-percent {
+  position: relative;
+}
+
+#kiwisaver-percent input[type="number"] {
+  padding-right: 30px;
+}
+
+#kiwisaver-percent:after {
+  content: '%';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 1.2em;
+}
+
+#results-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px auto;
+}
+
+#results-section {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+#results-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.result-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.result-value {
+  font-weight: bold;
+}

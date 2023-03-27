@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="/scripts.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <title>Employee Assist</title>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Calculate your wages the simple way</h1>
+      <p>No Math Needed</p>
+      <a href="#" class="btn btn-primary">Call to Action</a>
+    </section>
+    <!-- Calculator -->
+    <section class="calculator">
+      <h2>Pay Calculator</h2>
+      <form>
+        <label for="hourly-rate">Hourly Rate:</label>
+        <input type="number" id="hourly-rate" name="hourly-rate" />
+
+        <label for="hours-worked">Hours Worked:</label>
+        <input type="number" id="hours-worked" name="hours-worked" />
+
+        <label for="tax-bracket">Select your tax bracket:</label>
+        <select id="tax-bracket" name="tax-bracket">
+          <option value="10.5">Up to $14,000 (10.5%)</option>
+          <option value="17.5">$14,001 - $48,000 (17.5%)</option>
+          <option value="30">$48,001 - $70,000 (30.0%)</option>
+          <option value="33">Over $70,000 (33.0%)</option>
+        </select>
+        <!-- Kiwisaver -->
+        <div class="checkbox-container">
+          <input type="checkbox" id="kiwisaver" name="kiwisaver" value="yes">
+          <label for="kiwisaver">Do you have a KiwiSaver account?</label>
+        </div>
+
+        <div id="kiwisaver-options" style="display: none">
+          <label for="kiwisaver-percentage">What percentage do you contribute?</label>
+          <label for="kiwisaver-percent">KiwiSaver contribution percentage:</label>
+          <input type="number" name="kiwisaver-percent" id="kiwisaver-percent" min="0" max="10" value="3">
+
+        </div>
+
+        <!-- Student loan -->
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="studentLoan" name="studentLoan" value="yes">
+          <label for="studentLoan">Do you have a Student Loan?</label>
+        </div>
+
+        <div id="studentLoanOptions" style="display: none">
+          <label for="studentLoanField">What percentage do you contribute?</label>
+          <input type="number" name="studentLoanField" id="studentLoanField" min="0" max="100" value="0">
+          <p>Please note that student loan repayment in New Zealand is 12% of income over the repayment threshold. This
+            percentage is fixed and cannot be adjusted. </p>
+        </div>
+
+        <!-- end of student loan -->
+
+
+        <button type="button" id="calculate-button">Calculate Pay</button>
+      </form>
+    </section>
+
+    <div id="results-section">
+      <h2>Results</h2>
+      <div class="result-item">
+        <span class="result-label">Gross pay:</span>
+        <span class="result-value" id="gross-pay"></span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Tax:</span>
+        <span class="result-value" id="tax-amount"></span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">KiwiSaver:</span>
+        <span class="result-value" id="kiwisaver-amount"></span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Student loan:</span>
+        <span class="result-value" id="student-loan-amount"></span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Net pay:</span>
+        <span class="result-value" id="net-pay"></span>
+      </div>
+    </div>
+
+
+    <!-- End of calculator  -->
+    <section class="about">
+      <h2>About Us</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
+        massa euismod, dictum lectus ut, pharetra nisl. Donec in pulvinar
+        nibh.
+      </p>
+    </section>
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <textarea placeholder="Message"></textarea>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright &copy; Your Company</p>
+  </footer>
+</body>
+
+</html>
