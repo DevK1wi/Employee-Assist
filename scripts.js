@@ -81,6 +81,18 @@ taxElement.textContent = `$${taxAmount.toFixed(2)}`;
     studentLoanAmount += userStudentLoanAmount;
     taxAmount += studentLoanAmount;
   }
+
+   // update results section
+   const grossPaySpan = document.getElementById("gross-pay");
+   const taxAmountSpan = document.getElementById("tax-amount");
+   const kiwiSaverAmountSpan = document.getElementById("kiwisaver-amount");
+   const studentLoanAmountSpan = document.getElementById("studentloan-amount");
+   const netPaySpan = document.getElementById("net-pay");
+ 
+   grossPaySpan.textContent = grossPay.toFixed(2);
+   taxAmountSpan.textContent = taxAmount.toFixed(2);
+   kiwiSaverAmountSpan.textContent = kiwiSaverAmount.toFixed(2);
+   studentLoanAmountSpan.textContent = studentLoanAmount
   
 
   // calculate net pay
@@ -88,6 +100,8 @@ taxElement.textContent = `$${taxAmount.toFixed(2)}`;
   console.log(netPay)
   console.log(grossPay);
 });
+
+
 
 
 
