@@ -8,9 +8,11 @@ const studentLoan = document.getElementsByName("studentLoan");
 
 const kiwiSaverCheckbox = document.getElementById('kiwisaver');
 const kiwiSaverOptionsDiv = document.getElementById('kiwisaver-options');
+const kiwiSaverAmount = 0;
 
 const studentLoanAmountInput = document.getElementById("student-loan-amount-input");
 const studentLoanField = document.getElementById("studentLoanField");
+const studentLoanAmount = 0;
 
 const studentLoanThreshold = 39000;
 
@@ -86,20 +88,20 @@ taxElement.textContent = `$${taxAmount.toFixed(2)}`;
    const grossPaySpan = document.getElementById("gross-pay");
    const taxAmountSpan = document.getElementById("tax-amount");
    const kiwiSaverAmountSpan = document.getElementById("kiwisaver-amount");
-   const studentLoanAmountSpan = document.getElementById("studentloan-amount");
+   const studentLoanAmountSpan = document.getElementById("student-loan-amount");
    const netPaySpan = document.getElementById("net-pay");
  
    grossPaySpan.textContent = grossPay.toFixed(2);
    taxAmountSpan.textContent = taxAmount.toFixed(2);
    kiwiSaverAmountSpan.textContent = kiwiSaverAmount.toFixed(2);
-   studentLoanAmountSpan.textContent = studentLoanAmount
+   studentLoanAmountSpan.textContent = studentLoanAmount.toFixed(2);
   
 
   // calculate net pay
   const netPay = grossPay - taxAmount;
   console.log(netPay)
   console.log(grossPay);
-});
+}); 
 
 
 
